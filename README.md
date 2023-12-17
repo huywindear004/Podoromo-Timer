@@ -14,10 +14,10 @@ This simple application is developed by myself just to help my study because:
 <hr>
 
 ## Images
-<img src="D:\APP\CODE\PROJECTS\JAVA\PodoromoTimerProject\demoImages\init.jpg" width="370"/>
-<img src="D:\APP\CODE\PROJECTS\JAVA\PodoromoTimerProject\demoImages\shortBreak.jpg" width="370"/>
-<img src="D:\APP\CODE\PROJECTS\JAVA\PodoromoTimerProject\demoImages\longBreak.jpg" width="370"/>
-<img src="D:\APP\CODE\PROJECTS\JAVA\PodoromoTimerProject\demoImages\setting.jpg" width="370"/>
+<img src="demoImages/init.jpg" width="370"/>
+<img src="demoImages/shortBreak.jpg" width="370"/>
+<img src="demoImages/longBreak.jpg" width="370"/>
+<img src="demoImages/setting.jpg" width="370"/>
 
 <hr>
 
