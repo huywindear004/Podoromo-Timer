@@ -14,11 +14,11 @@ This simple application is developed by myself just to help my study because:
 <hr>
 
 ## Images
-<div style="display: flex; flex-wrap: wrap">
-    <img src="demoImages/init.jpg" width="45%"/>
-    <img src="demoImages/shortBreak.jpg" width="45%"/>
-    <img src="demoImages/longBreak.jpg" width="45%"/>
-    <img src="demoImages/setting.jpg" width="45%"/>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-evenly">
+    <img src="demoImages/init.jpg" width="48%"/>
+    <img src="demoImages/shortBreak.jpg" width="48%"/>
+    <img src="demoImages/longBreak.jpg" width="48%"/>
+    <img src="demoImages/setting.jpg" width="48%"/>
     </div>
 
 <hr>
