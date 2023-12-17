@@ -14,10 +14,10 @@ This simple application is developed by myself just to help my study because:
 <hr>
 
 ## Images
-<img src="demoImages/init.jpg" width="48%"/>
-<img src="demoImages/shortBreak.jpg" width="48%"/>
-<img src="demoImages/longBreak.jpg" width="48%"/>
-<img src="demoImages/setting.jpg" width="48%"/>
+<img src="demoImages/init.jpg" width="250px"/>
+<img src="demoImages/shortBreak.jpg" width="250px"/>
+<img src="demoImages/longBreak.jpg" width="250px"/>
+<img src="demoImages/setting.jpg" width="250px"/>
 
 <hr>
 
