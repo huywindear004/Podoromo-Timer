@@ -5,7 +5,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
 public class Settings {
-    private static byte workSessions = 4;
+    private static short workSessions = 4;
     private static final short DELAY = 1000;
 
     public enum State{
@@ -33,8 +33,12 @@ public class Settings {
         }
     }
 
-    public static byte getWorkSessions(){
+    public static short getWorkSessions(){
         return workSessions;
+    }
+
+    public static void setWorkSessions(short val){
+        workSessions = val;
     }
 
     public static short getDELAY() {

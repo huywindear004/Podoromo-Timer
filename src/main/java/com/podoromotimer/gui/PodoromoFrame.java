@@ -49,6 +49,8 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
      */
     private JButton confirmButton;
     private JButton cancelButton;
+    private JButton audioButton;
+    private JTextField longBreakIntervalField;
 
     public PodoromoFrame() {
         //initialize Audio first to prevent the first click is muted
@@ -62,11 +64,13 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
         this.workField.setText(String.valueOf(Settings.State.WORK.getDuration()));
         this.shortBreakField.setText(String.valueOf(Settings.State.SHORT_BREAK.getDuration()));
         this.longBreakField.setText(String.valueOf(Settings.State.LONG_BREAK.getDuration()));
+        this.longBreakIntervalField.setText(String.valueOf(Settings.getWorkSessions()));
 
         //set common properties for JTextFields
         Settings.setNumberFormatValidate(this.workField);
         Settings.setNumberFormatValidate(this.shortBreakField);
         Settings.setNumberFormatValidate(this.longBreakField);
+        Settings.setNumberFormatValidate(this.longBreakIntervalField);
 
         //==============================START BUTTON==============================
         this.startButton.addActionListener(e -> {
@@ -100,6 +104,18 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
             this.startButton.setText("RESUME");
             timer.switchSession();
         });
+        //==============================AUDIO BUTTON==============================
+        this.audioButton.addActionListener(e->{
+            if(!Audio.isMute()){
+                Audio.muteAudio();
+                this.audioButton.setText("🔇");
+            }
+            else if(Audio.isMute()){
+                Audio.unMuteAudio();
+                Audio.playSound("click");
+                this.audioButton.setText("🔊");
+            }
+        });
         //==============================SETTINGS BUTTON==============================
         this.settingButton.addActionListener(e -> {
             Audio.playSound("click");
@@ -113,6 +129,7 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
             Settings.State.setWorkMinutes(Short.parseShort(this.workField.getText()));
             Settings.State.setShortBreakMinutes(Short.parseShort(this.shortBreakField.getText()));
             Settings.State.setLongBreakMinutes(Short.parseShort(this.longBreakField.getText()));
+            Settings.setWorkSessions(Short.parseShort(this.longBreakIntervalField.getText()));
         });
         //==============================CANCEL BUTTON==============================
         this.cancelButton.addActionListener(e -> {
@@ -122,6 +139,7 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
             this.workField.setText(String.valueOf(Settings.State.WORK.getDuration()));
             this.shortBreakField.setText(String.valueOf(Settings.State.SHORT_BREAK.getDuration()));
             this.longBreakField.setText(String.valueOf(Settings.State.LONG_BREAK.getDuration()));
+            this.longBreakIntervalField.setText(String.valueOf(Settings.getWorkSessions()));
         });
 
         //==============================JFRAME==============================

@@ -30,7 +30,7 @@ The GUI of this application is developed based on **_[pomofocus.io](https://pomo
 
 This application used **_TinySound_** to play sounds. **_TinySound_** is a simple library to play or manage sounds in Java.
 
-### !!!!!!This project is not developed for commercial purposes.!!!!!!
+## !!!!!!This project is not developed for commercial purposes.!!!!!!
 <hr/>
 
 ##### The basic steps are:
@@ -41,13 +41,14 @@ This application used **_TinySound_** to play sounds. **_TinySound_** is a simpl
 5. Take a longer break of about 15 to 30 minutes. <br/>
 
 ##### Functions:
-- Pause / resume session for having a temporary break.
-- Skip the current session
-- Reset all
-- Add sounds when clicked and between changing session
-- Change theme color corresponding to the session 
-- Modify the duration of sessions
-- Auto validates the input value
+- Pause / resume session for having a temporary break.  ⏯
+- Skip the current session ⏭
+- Reset all 🔄
+- Add sounds when clicked and between changing session 🔊
+- Mute / unmute sounds 🔊/🔇
+- Change theme color corresponding to the session 🟥🟩🟦
+- Modify the duration of sessions, long break interval 🔧
+- Auto validates the input value ✅
 <hr/>
 
 ## Dependencies
@@ -57,7 +58,7 @@ This application used **_TinySound_** to play sounds. **_TinySound_** is a simpl
 ## Prerequisites
 Before you continue, ensure you meet the following requirements: 
 - You have installed at least **Java 8**
-- You have installed **Intellij** to use Swing GUI Designer
+- You have installed **Intellij** to use **Swing GUI Designer**
 <hr>
 
 ## Using Podoromo Timer

@@ -36,7 +36,7 @@
           <preferredSize width="550" height="300"/>
           <requestFocusEnabled value="false"/>
           <verifyInputWhenFocusTarget value="false"/>
-          <visible value="true"/>
+          <visible value="false"/>
         </properties>
         <border type="empty"/>
         <children>
@@ -348,7 +348,7 @@
             <children>
               <component id="9a8d5" class="javax.swing.JButton" binding="settingButton">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                   <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
@@ -356,20 +356,43 @@
                   <borderPainted value="false"/>
                   <contentAreaFilled value="false"/>
                   <defaultCapable value="false"/>
-                  <focusPainted value="true"/>
+                  <focusPainted value="false"/>
                   <focusable value="false"/>
                   <font size="36"/>
                   <foreground color="-1"/>
                   <horizontalTextPosition value="0"/>
-                  <maximumSize width="100" height="100"/>
-                  <minimumSize width="78" height="40"/>
+                  <maximumSize width="78" height="50"/>
+                  <minimumSize width="78" height="50"/>
                   <opaque value="false"/>
-                  <preferredSize width="75" height="60"/>
+                  <preferredSize width="78" height="50"/>
                   <requestFocusEnabled value="false"/>
                   <rolloverEnabled value="false"/>
                   <text value="🍅"/>
                   <verifyInputWhenFocusTarget value="false"/>
-                  <verticalAlignment value="1"/>
+                  <verticalAlignment value="0"/>
+                </properties>
+              </component>
+              <component id="bf819" class="javax.swing.JButton" binding="audioButton">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <actionCommand value=""/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font size="36"/>
+                  <foreground color="-1"/>
+                  <horizontalTextPosition value="0"/>
+                  <opaque value="false"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <selected value="false"/>
+                  <text value="🔊"/>
+                  <verifyInputWhenFocusTarget value="false"/>
                 </properties>
               </component>
             </children>
@@ -405,14 +428,14 @@
               <horizontalTextPosition value="2"/>
               <inheritsPopupMenu value="false"/>
               <minimumSize width="116" height="45"/>
-              <preferredSize width="116" height="45"/>
+              <preferredSize width="116" height="40"/>
               <requestFocusEnabled value="false"/>
               <text value="SETTINGS"/>
               <verifyInputWhenFocusTarget value="false"/>
               <visible value="true"/>
             </properties>
           </component>
-          <grid id="37771" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="37771" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints border-constraint="Center"/>
             <properties>
@@ -472,7 +495,7 @@
               </component>
               <component id="5e0c4" class="javax.swing.JButton" binding="cancelButton">
                 <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="200" height="-1"/>
                   </grid>
                 </constraints>
@@ -496,7 +519,7 @@
               </component>
               <component id="f32c8" class="javax.swing.JButton" binding="confirmButton">
                 <constraints>
-                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="200" height="-1"/>
                   </grid>
                 </constraints>
@@ -554,6 +577,37 @@
               <component id="ed22f" class="javax.swing.JTextField" binding="longBreakField">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <autoscrolls value="false"/>
+                  <caretColor color="-1"/>
+                  <columns value="7"/>
+                  <font size="26" style="1"/>
+                  <foreground color="-1"/>
+                  <horizontalAlignment value="0"/>
+                  <opaque value="false"/>
+                  <requestFocusEnabled value="true"/>
+                  <text value=""/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+              <component id="d46d" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <focusable value="false"/>
+                  <font size="26" style="1"/>
+                  <foreground color="-1"/>
+                  <horizontalAlignment value="2"/>
+                  <opaque value="false"/>
+                  <preferredSize width="130" height="25"/>
+                  <text value="Long Break Interval"/>
+                </properties>
+              </component>
+              <component id="92c6f" class="javax.swing.JTextField" binding="longBreakIntervalField">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <autoscrolls value="false"/>

@@ -9,6 +9,7 @@ public class Audio {
     private static final Sound work = loadSound("work");
     private static final Sound shortBreak = loadSound("shortBreak");
     private static final Sound longBreak = loadSound("longBreak");
+    private static boolean isMute = false;
 
     public static void init() {
         TinySound.init();
@@ -18,11 +19,25 @@ public class Audio {
         TinySound.shutdown();
     }
 
+    public static boolean isMute(){
+        return isMute;
+    }
+
+    public static void muteAudio(){
+        isMute = true;
+    }
+
+    public static void unMuteAudio(){
+        isMute = false;
+    }
+
     public static Sound loadSound(String soundName) {
         return TinySound.loadSound("sounds/" + soundName+".wav");
     }
 
     public static void playSound(String sound){
+        if(isMute)
+            return;
         try{
             switch (sound){
                 case "click" -> click.play();
