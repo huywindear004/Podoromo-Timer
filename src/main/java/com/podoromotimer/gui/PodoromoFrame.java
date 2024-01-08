@@ -1,7 +1,9 @@
 package com.podoromotimer.gui;
 
 import com.podoromotimer.PodoromoTimer;
-import com.podoromotimer.Settings;
+import com.podoromotimer.settings.Colors;
+import com.podoromotimer.settings.Settings;
+import com.podoromotimer.settings.State;
 import com.podoromotimer.audio.Audio;
 
 import javax.swing.JPanel;
@@ -61,10 +63,14 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
 
         //set by default
         this.podoromoCountLabel.setText(String.valueOf(timer.getPodoromoCount()));
-        this.workField.setText(String.valueOf(Settings.State.WORK.getDuration()));
-        this.shortBreakField.setText(String.valueOf(Settings.State.SHORT_BREAK.getDuration()));
-        this.longBreakField.setText(String.valueOf(Settings.State.LONG_BREAK.getDuration()));
+        this.workField.setText(String.valueOf(State.WORK.getDuration()));
+        this.shortBreakField.setText(String.valueOf(State.SHORT_BREAK.getDuration()));
+        this.longBreakField.setText(String.valueOf(State.LONG_BREAK.getDuration()));
         this.longBreakIntervalField.setText(String.valueOf(Settings.getWorkSessions()));
+
+        this.workLabel.setBackground(Colors.DARKER_RED.getColor());
+        this.shortBreakLabel.setBackground(Colors.DARKER_OCEAN.getColor());
+        this.longBreakLabel.setBackground(Colors.DARKER_BLUE.getColor());
 
         //set common properties for JTextFields
         Settings.setNumberFormatValidate(this.workField);
@@ -110,7 +116,7 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
                 Audio.muteAudio();
                 this.audioButton.setText("🔇");
             }
-            else if(Audio.isMute()){
+            else {
                 Audio.unMuteAudio();
                 Audio.playSound("click");
                 this.audioButton.setText("🔊");
@@ -126,9 +132,9 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
             Audio.playSound("click");
             this.changePanel("timerPanel");
             //take input
-            Settings.State.setWorkMinutes(Short.parseShort(this.workField.getText()));
-            Settings.State.setShortBreakMinutes(Short.parseShort(this.shortBreakField.getText()));
-            Settings.State.setLongBreakMinutes(Short.parseShort(this.longBreakField.getText()));
+            State.setWorkMinutes(Short.parseShort(this.workField.getText()));
+            State.setShortBreakMinutes(Short.parseShort(this.shortBreakField.getText()));
+            State.setLongBreakMinutes(Short.parseShort(this.longBreakField.getText()));
             Settings.setWorkSessions(Short.parseShort(this.longBreakIntervalField.getText()));
         });
         //==============================CANCEL BUTTON==============================
@@ -136,9 +142,9 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
             Audio.playSound("click");
             this.changePanel("timerPanel");
             //reset textfields value
-            this.workField.setText(String.valueOf(Settings.State.WORK.getDuration()));
-            this.shortBreakField.setText(String.valueOf(Settings.State.SHORT_BREAK.getDuration()));
-            this.longBreakField.setText(String.valueOf(Settings.State.LONG_BREAK.getDuration()));
+            this.workField.setText(String.valueOf(State.WORK.getDuration()));
+            this.shortBreakField.setText(String.valueOf(State.SHORT_BREAK.getDuration()));
+            this.longBreakField.setText(String.valueOf(State.LONG_BREAK.getDuration()));
             this.longBreakIntervalField.setText(String.valueOf(Settings.getWorkSessions()));
         });
 
@@ -190,35 +196,28 @@ public class PodoromoFrame extends JFrame implements PodoromoPanelListener {
 
     @Override
     public void changeBackGroundColor() {
+        Color bgColor = null;
+        Color countPanelColor = null;
         switch(timer.getCurrentState()){
             case WORK -> {
-                Color bgColor = new Color(186,73,73);
-                this.mainPanel.setBackground(bgColor);
-                this.startButton.setForeground(bgColor);
-                this.restartButton.setForeground(bgColor);
-                this.resetButton.setForeground(bgColor);
-                this.nextButton.setForeground(bgColor);
-                this.podoromoCountPanel.setBackground(new Color(193,92,92));
+                bgColor = Colors.RED.getColor();
+                countPanelColor = Colors.LIGHTER_RED.getColor();
             }
             case SHORT_BREAK -> {
-                Color bgColor = new Color(76,145,150);
-                this.mainPanel.setBackground(bgColor);
-                this.startButton.setForeground(bgColor);
-                this.restartButton.setForeground(bgColor);
-                this.resetButton.setForeground(bgColor);
-                this.nextButton.setForeground(bgColor);
-                this.podoromoCountPanel.setBackground(new Color(110,166,171));
+                bgColor = Colors.OCEAN.getColor();
+                countPanelColor = Colors.LIGHTER_OCEAN.getColor();
             }
             case LONG_BREAK -> {
-                Color bgColor = new Color(77,127,162);
-                this.mainPanel.setBackground(bgColor);
-                this.startButton.setForeground(bgColor);
-                this.restartButton.setForeground(bgColor);
-                this.resetButton.setForeground(bgColor);
-                this.nextButton.setForeground(bgColor);
-                this.podoromoCountPanel.setBackground(new Color(95,140,171));
+                bgColor = Colors.BLUE.getColor();
+                countPanelColor = Colors.LIGHTER_BLUE.getColor();
             }
         }
+        this.mainPanel.setBackground(bgColor);
+        this.startButton.setForeground(bgColor);
+        this.restartButton.setForeground(bgColor);
+        this.resetButton.setForeground(bgColor);
+        this.nextButton.setForeground(bgColor);
+        this.podoromoCountPanel.setBackground(countPanelColor);
     }
 
     private void changePanel(String cardName) {

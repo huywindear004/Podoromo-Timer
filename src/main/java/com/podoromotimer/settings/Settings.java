@@ -1,4 +1,4 @@
-package com.podoromotimer;
+package com.podoromotimer.settings;
 
 import javax.swing.JTextField;
 import java.awt.event.FocusEvent;
@@ -7,31 +7,6 @@ import java.awt.event.FocusListener;
 public class Settings {
     private static short workSessions = 4;
     private static final short DELAY = 1000;
-
-    public enum State{
-        WORK((short) 25),SHORT_BREAK((short) 5),LONG_BREAK((short) 15);
-        private short duration;
-
-        private State(short duration){
-            this.duration = duration;
-        }
-
-        public int getDuration() {
-            return duration;
-        }
-
-        public static void setWorkMinutes(short duration){
-            WORK.duration = duration;
-        }
-
-        public static void setShortBreakMinutes(short duration){
-            SHORT_BREAK.duration = duration;
-        }
-
-        public static void setLongBreakMinutes(short duration){
-            LONG_BREAK.duration = duration;
-        }
-    }
 
     public static short getWorkSessions(){
         return workSessions;
