@@ -1,4 +1,4 @@
-# PODOROMO TIMER 🍅
+# Pomodoro TIMER 🍅
 <hr>
 
 ## Images
